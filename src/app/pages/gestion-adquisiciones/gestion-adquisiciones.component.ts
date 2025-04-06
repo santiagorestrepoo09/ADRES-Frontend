@@ -22,6 +22,7 @@ export class GestionAdquisicionesComponent {
     numero_orden: '',
     factura: '',
   };
+  formSubmitted: boolean = false;
 
   constructor(
     private router: Router,
@@ -80,6 +81,7 @@ export class GestionAdquisicionesComponent {
           numero_orden: '',
           factura: '',
         };
+        this.formSubmitted = true;
       },
       error: (err: any) => {
         console.error('❌ Error al registrar adquisición', err);

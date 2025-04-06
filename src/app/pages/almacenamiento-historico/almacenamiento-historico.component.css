@@ -66,3 +66,51 @@ tr:hover {
   background-color: #f1f1f1;
 }
   
+/* Estilo para el contenedor del filtro */
+div {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px; /* Espaciado entre el input y el botón */
+  margin-bottom: 20px;
+}
+
+/* Estilo para el campo de entrada */
+.filtro-input {
+  padding: 10px 15px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 300px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.filtro-input:focus {
+  border-color: #007bff;
+  box-shadow: 0 4px 8px rgba(0, 123, 255, 0.2);
+  outline: none;
+}
+
+/* Estilo para el botón */
+.btn-filtrar {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.btn-filtrar:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+.btn-filtrar:active {
+  background-color: #003f7f;
+  transform: scale(0.95);
+}

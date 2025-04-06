@@ -33,6 +33,7 @@ export class InicioComponent implements OnInit {
   editarRequerimiento(item: any) {
     item.editando = true;
   }
+
   // Guarda los cambios realizados
   guardarEdicion(indice: number, item: Adquisicion) {
     const confirmar = window.confirm("¿Estás seguro de que deseas actualizar?");
@@ -45,14 +46,6 @@ export class InicioComponent implements OnInit {
       next: (response) => {
         console.log('Adquisición actualizada:', response);
         this.requerimientosFiltrados[indice] = response.registro_actualizado;
-        // Registrar el evento después de actualizar
-        this.evento = {
-          factura: (item as any).factura,
-          tipo_evento: 'Actualización',
-          descripcion: `Se actualizó el requerimiento con índice ${indice}`,
-          datos_afectados: item
-        };
-        this.registrarEvento();
       },
       error: (err) => {
         console.error('Error al actualizar adquisición:', err);
@@ -60,7 +53,7 @@ export class InicioComponent implements OnInit {
     });
   }
 
-   // Método para enviar el evento al backend
+    // Método para enviar el evento al backend
    registrarEvento() {
     this.adquisicionesService.crearEvento(this.evento).subscribe(
       (response) => {
@@ -95,6 +88,7 @@ export class InicioComponent implements OnInit {
     this.adquisicionesService.obtenerAdquisiciones().subscribe({
       next: (datos) => {
         this.requerimientos = datos;
+        this.requerimientosFiltrados = [...this.requerimientos];
         console.log('Requerimientos cargados:', this.requerimientos);
       },
       error: (err) => {
@@ -142,10 +136,17 @@ export class InicioComponent implements OnInit {
     if (!confirmar) {
       return; 
     }
+  
     this.adquisicionesService.eliminarAdquisicion(index).subscribe({
       next: (res) => {
         console.log(res);
-        this.requerimientos.splice(index, 1); 
+        const eliminado = this.requerimientos.splice(index, 1);
+        const indexFiltrado = this.requerimientosFiltrados.findIndex(req => req === eliminado[0]);
+        if (indexFiltrado !== -1) {
+          this.requerimientosFiltrados.splice(indexFiltrado, 1);
+        }
+  
+        console.log('Requerimiento eliminado del frontend');
       },
       error: (err) => {
         console.error('Error eliminando el requerimiento:', err);
