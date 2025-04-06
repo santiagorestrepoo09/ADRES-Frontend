@@ -1,40 +1,40 @@
 .login-container {
-    max-width: 400px;
-    margin: 5rem auto;
-    padding: 2rem;
-    background-color: #ffffff;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    border-top: 5px solid #1D2D50;
-  }
-  
-  .login-container h2 {
-    color: #1D2D50;
-    margin-bottom: 1.5rem;
-  }
-  
-  form input {
-    width: 100%;
-    padding: 0.8rem;
-    margin: 0.5rem 0;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
-  
-  form button {
-    background-color: #00C9A7;
-    color: white;
-    border: none;
-    padding: 0.8rem 1.5rem;
-    margin-top: 1rem;
-    border-radius: 4px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
-  }
-  
-  form button:hover {
-    background-color: #9AD0EC;
-  }
-  
+  max-width: 400px;
+  margin: 5rem auto;
+  padding: 2rem;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  border-top: 5px solid #1D2D50;
+}
+
+.login-container h2 {
+  color: #1D2D50;
+  margin-bottom: 1.5rem;
+}
+
+form input {
+  width: 100%;
+  padding: 0.8rem;
+  margin: 0.5rem 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box; /* Solución para evitar que los inputs se salgan del contorno */
+}
+
+form button {
+  background-color: #00C9A7;
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  margin-top: 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+form button:hover {
+  background-color: #9AD0EC;
+}
