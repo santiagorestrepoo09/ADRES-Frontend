@@ -1,0 +1,69 @@
+<div class="layout-principal">
+  <div class="menu-lateral">
+    <button (click)="irAGestion()">Gestión de Adquisiciones</button>
+    <button (click)="irAlmacenamientoHistorico()">Almacenamiento Historico</button>
+
+    <button (click)="salir()">Salir</button>
+  </div>
+  
+  <div class="inicio-container">
+    <div class="logo-superior">
+      <img src="assets/images/adres.JPG" alt="Logo ADRES" />
+    </div>
+  
+    <div class="encabezado">
+      <h1>Bienvenido a la plataforma ADRES</h1>
+      <p>Selecciona una opción del menú lateral derecho.</p>
+    </div>
+
+    <div class="filtros-busqueda">
+      <input type="text" [(ngModel)]="filtro.proveedor" placeholder="Proveedor" />
+      <input type="text" [(ngModel)]="filtro.estado" placeholder="(activo/inactivo)" />
+      <input type="text" [(ngModel)]="filtro.unidad" placeholder="Unidad" />
+      <button (click)="aplicarFiltros()">Buscar</button>
+    </div>
+  
+    <ul id="requerimientos">
+      <h2>Historial de Requerimientos</h2>
+      <li *ngFor="let item of requerimientosFiltrados; let i = index" [ngClass]="{ 'desactivado': item.estado !== 'activo' }">
+        <strong>Proveedor : {{ item.proveedor }}</strong>
+        <span *ngIf="item.estado !== 'activo'"> (Desactivado)</span><br />
+      
+        Numero de Orden: {{ item.numero_orden }}<br />
+        factura: {{ item.factura }}<br />
+        Unidad: {{ item.unidad }}<br />
+        Cantidad: {{ item.cantidad }}<br />
+        Valor Unitario: {{ item.valor_unitario }}<br />
+        Valor Total: {{ item.valor_total }}<br />
+        Documentación: {{ item.documentacion }}<br />
+        presupuesto: {{ item.presupuesto }}<br />
+        Fecha Adquisicion: {{ item.fecha_adquisicion }}<br />
+      
+        <button class="btn-toggle" (click)="toggleEstado(i)">
+          {{ item.estado === 'activo' ? 'Desactivar' : 'Activar' }}
+        </button>
+      
+        <button class="btn-eliminar" (click)="eliminarRequerimiento(i)">Eliminar</button>
+      
+        <!-- Botón Editar -->
+        <button class="btn-editar" (click)="editarRequerimiento(item)">Editar</button>
+      
+        <!-- Formulario de edición (se muestra cuando se hace clic en editar) -->
+        <div *ngIf="item.editando"> 
+          <p>Factura</p>
+          <input [(ngModel)]="item.factura" placeholder="Factura" />
+          <p>Cantidad</p>
+          <input [(ngModel)]="item.cantidad" placeholder="Cantidad" />
+          <p>Valor Unitario</p>
+          <input [(ngModel)]="item.valor_unitario" placeholder="Valor Unitario" />
+          <p>Valor Total</p>
+          <input [(ngModel)]="item.valor_total" placeholder="Valor Total" />
+          <p>Valor Presupuesto</p>
+          <input [(ngModel)]="item.presupuesto" placeholder="Presupuesto" />
+          <button class="btn-guardar" (click)="guardarEdicion(i, item)">Guardar</button>
+          <button class="btn-eliminar" (click)="cancelarEdicion(item)">Cancelar</button>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>

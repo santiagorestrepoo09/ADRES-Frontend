@@ -1,0 +1,26 @@
+<header>
+  <h1>Almacenamiento Histórico</h1>
+</header>
+
+<div>
+  <table>
+    <thead>
+      <tr>
+        <th>Factura</th>
+        <th>Tipo de Evento</th>
+        <th>Fecha</th>
+        <th>Descripción</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let evento of eventos">
+        <td>{{ evento.factura }}</td>
+        <td>{{ evento.tipo_evento }}</td>
+        <td>{{ evento.fecha_hora }}</td>
+        <td>{{ evento.datos_afectados }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<button class="btn-regresar" (click)="regresar()">← Regresar</button>
