@@ -1,0 +1,68 @@
+/* Asegura que toda la altura esté disponible */
+html, body {
+    height: 100%;
+    margin: 0;
+  }
+  
+  /* Contenedor principal para todo el contenido */
+  .layout-principal {
+    display: flex; /* Usa flexbox para alinear los elementos */
+    min-height: 100vh; /* Asegura que ocupe toda la altura de la ventana, incluso cuando hay más contenido */
+    flex-direction: row;
+  }
+
+  .btn-regresar {
+    background-color: #1D2D50;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-bottom: 1rem;
+  }
+  
+  .btn-regresar:hover {
+    background-color: #163060;
+  }
+/* Centrar la tabla */
+div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+/* Estilo de la tabla */
+table {
+  width: 80%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-size: 16px;
+  text-align: left;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+thead {
+  background-color: #f4f4f4;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 12px 15px;
+}
+
+th {
+  background-color: #007bff;
+  color: white;
+  text-transform: uppercase;
+}
+
+tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+tr:hover {
+  background-color: #f1f1f1;
+}
+  

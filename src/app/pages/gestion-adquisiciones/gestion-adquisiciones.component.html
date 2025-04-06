@@ -1,0 +1,107 @@
+<header>
+  <h1>Gestión de Adquisiciones</h1>
+</header>
+
+<main>
+  <form (ngSubmit)="registrarAdquisicion()" #formAdquisicion="ngForm">
+
+    <label for="presupuesto">Presupuesto</label>
+    <input type="text" id="presupuesto" placeholder="Presupuesto"
+      [(ngModel)]="adquisicion.presupuesto" name="presupuesto" required #presupuesto="ngModel" />
+    <div *ngIf="presupuesto.invalid && presupuesto.touched" class="error">Este campo es obligatorio.</div>
+
+    <label for="unidad">Unidad</label>
+    <input type="text" id="unidad" placeholder="Unidad"
+      [(ngModel)]="adquisicion.unidad" name="unidad" required #unidad="ngModel" />
+    <div *ngIf="unidad.invalid && unidad.touched" class="error">Este campo es obligatorio.</div>
+
+    <label for="tipo_bien_servicio">Tipo de Bien o Servicio</label>
+    <input type="text" id="tipo_bien_servicio" placeholder="Tipo de Bien o Servicio"
+      [(ngModel)]="adquisicion.tipo_bien_servicio" name="tipo_bien_servicio" required #tipo="ngModel" />
+    <div *ngIf="tipo.invalid && tipo.touched" class="error">Este campo es obligatorio.</div>
+
+    <label for="cantidad">Cantidad</label>
+    <input type="number" id="cantidad" placeholder="Cantidad"
+      [(ngModel)]="adquisicion.cantidad" name="cantidad" required #cantidad="ngModel" />
+    <div *ngIf="cantidad.invalid && cantidad.touched" class="error">Este campo es obligatorio.</div>
+
+    <label for="valor_unitario">Valor Unitario</label>
+    <input type="number" id="valor_unitario" placeholder="Valor Unitario"
+      [(ngModel)]="adquisicion.valor_unitario" name="valor_unitario" required #valorUnitario="ngModel" />
+    <div *ngIf="valorUnitario.invalid && valorUnitario.touched" class="error">Este campo es obligatorio.</div>
+
+    <label for="valor_total">Valor Total</label>
+    <input type="number" id="valor_total" placeholder="Valor Total"
+      [(ngModel)]="adquisicion.valor_total" name="valor_total" required #valorTotal="ngModel" />
+    <div *ngIf="valorTotal.invalid && valorTotal.touched" class="error">Este campo es obligatorio.</div>
+
+    <label for="fecha_adquisicion">Fecha de Adquisición</label>
+    <input type="date" id="fecha_adquisicion" placeholder="Fecha de Adquisición"
+      [(ngModel)]="adquisicion.fecha_adquisicion" name="fecha_adquisicion" required #fecha="ngModel" />
+    <div *ngIf="fecha.invalid && fecha.touched" class="error">Este campo es obligatorio.</div>
+
+    <label for="proveedor">Proveedor</label>
+    <input type="text" id="proveedor" placeholder="Proveedor"
+      [(ngModel)]="adquisicion.proveedor" name="proveedor" required #proveedor="ngModel" />
+    <div *ngIf="proveedor.invalid && proveedor.touched" class="error">Este campo es obligatorio.</div>
+
+    <label for="estado">Estado</label>
+    <select id="estado" [(ngModel)]="adquisicion.estado" name="estado" required #estado="ngModel">
+      <option value="" disabled selected>Seleccione el estado</option>
+      <option value="activo">Activo</option>
+      <option value="inactivo">Inactivo</option>
+    </select>
+    <div *ngIf="estado.invalid && estado.touched" class="error">Seleccione un estado.</div>
+
+    <label for="numero_orden">Numero de Orden</label>
+    <input type="text" id="numero_orden" placeholder="Numero Orden"
+      [(ngModel)]="adquisicion.numero_orden" name="numero_orden" required #numero_orden="ngModel" />
+    <div *ngIf="numero_orden.invalid && numero_orden.touched" class="error">Este campo es obligatorio.</div>
+
+    
+    <label for="factura">Factura</label>
+    <input type="text" id="factura" placeholder="Factura"
+      [(ngModel)]="adquisicion.factura" name="factura" required #factura="ngModel" />
+    <div *ngIf="factura.invalid && factura.touched" class="error">Este campo es obligatorio.</div>
+
+
+    <label for="documentacion">Observaciones</label>
+    <textarea id="documentacion" placeholder="Observaciones"
+      [(ngModel)]="adquisicion.documentacion" name="documentacion"></textarea>
+
+    <button type="submit" [disabled]="!formAdquisicion.valid">Registrar</button>
+  </form>
+
+  <button class="btn-regresar" (click)="regresar()">← Regresar</button>
+</main>
+
+<style>
+  .error {
+    color: red;
+    font-size: 0.9em;
+    margin-bottom: 0.5rem;
+  }
+
+  input.ng-invalid.ng-touched,
+  select.ng-invalid.ng-touched,
+  textarea.ng-invalid.ng-touched {
+    border: 1px solid red;
+  }
+
+  label {
+    display: block;
+    margin-top: 1rem;
+    font-weight: bold;
+  }
+
+  input, select, textarea {
+    display: block;
+    width: 100%;
+    padding: 0.4rem;
+    margin-bottom: 0.3rem;
+  }
+
+  button {
+    margin-top: 1rem;
+  }
+</style>

@@ -1,0 +1,205 @@
+/* Asegura que toda la altura esté disponible */
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+/* Contenedor principal para todo el contenido */
+.layout-principal {
+  display: flex; /* Usa flexbox para alinear los elementos */
+  min-height: 100vh; /* Asegura que ocupe toda la altura de la ventana, incluso cuando hay más contenido */
+  flex-direction: row;
+}
+
+/* Menú lateral */
+.menu-lateral {
+  width: 220px;
+  background-color: #1D2D50;
+  color: white;
+  padding: 1rem;
+  gap: 5px; /* Espaciado reducido entre botones */
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column; /* Hace que los botones se alineen verticalmente */
+  justify-content: space-between; /* Distribuye el espacio entre los botones */
+  min-height: 100%; /* El menú se extiende hasta la altura total del documento */
+  position: relative;
+}
+
+/* Botones dentro del menú */
+.menu-lateral button {
+  width: 100%;
+  background-color: #00C9A7;
+  color: white;
+  border: none;
+  padding: 0.8rem;
+  margin-bottom: 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* Efecto hover para los botones */
+.menu-lateral button:hover {
+  background-color: #9AD0EC;
+}
+
+/* Contenido principal */
+.inicio-container {
+  flex-grow: 1; /* El contenido se expande para llenar el espacio restante */
+  padding: 2rem;
+  overflow: auto; /* Asegura que el contenido sea desplazable si es necesario */
+}
+/* Contenido a la derecha del menú */
+.contenido-principal {
+  flex: 1;
+  padding: 2rem;
+  background-color: #f5f5f5;
+}
+
+/* Logo superior */
+.logo-superior {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.logo-superior img,
+.logo-adres {
+  width: 100px;
+  height: auto;
+}
+
+/* Encabezado */
+.encabezado {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.encabezado h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.encabezado p {
+  font-size: 1.2rem;
+  color: #333;
+}
+
+h2 {
+  font-size: 1.5rem;
+  margin-top: 2rem;
+  text-align: center;
+}
+
+/* Botones generales */
+button {
+  padding: 0.5rem 1rem;
+  margin: 0.3rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Botón Activar/Desactivar */
+.btn-toggle {
+  background-color: #007bff;
+  color: white;
+}
+
+.btn-toggle:hover {
+  background-color: #0056b3;
+}
+
+/* Botón Activar/Desactivar */
+.btn-guardar {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.btn-guardar:hover {
+  background-color: #4CAF50;
+}
+
+
+/* Botón Eliminar */
+.btn-eliminar {
+  background-color: #e74c3c; /* rojo suave */
+  border: none;
+  color: white;
+  padding: 6px 12px;
+  margin-left: 5px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-weight: bold;
+}
+
+.btn-eliminar:hover {
+  background-color: #c0392b; /* rojo más oscuro al pasar el mouse */
+}
+
+.desactivado {
+  background-color: #000000; /* Fondo rojo claro */
+  border-left: 5px solid #d9534f; /* Borde rojo más fuerte */
+  padding: 0.5rem;
+  color: #ff211d; /* Texto rojo oscuro */
+}
+
+.filtros-busqueda {
+  display: flex;
+  justify-content: center; /* Centra los elementos horizontalmente */
+  align-items: center; /* Centra los elementos verticalmente */
+  gap: 15px; /* Espacio entre los elementos */
+  padding: 20px; /* Espacio alrededor del contenedor */
+}
+
+.filtros-busqueda input, .filtros-busqueda button {
+  padding: 10px;
+  margin: 0; /* Elimina el margen por defecto */
+  font-size: 16px;
+}
+
+.filtros-busqueda input {
+  width: 200px; /* Establece un ancho fijo para los inputs */
+}
+
+.filtros-busqueda button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 10px 20px; /* Añade más espacio alrededor del texto */
+}
+.logo-superior img {
+  width: 200px;
+  height: auto;
+}
+
+/* Estilo para el formulario de edición */
+input {
+  margin: 5px;
+  padding: 10px;
+  width: 200px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+button {
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #f0f0f0;
+}
+
+.btn-editar {
+  background-color: #f0ad4e;
+  color: white;
+}
