@@ -36,24 +36,27 @@ El servidor se recargará automáticamente si realizas cambios en los archivos d
 
 Estructura del proyecto
 El proyecto está organizado de la siguiente manera:
-src/
-├── app/
-│   ├── pages/
-│   │   ├── inicio/
-│   │   │   ├── inicio.component.ts
-│   │   │   ├── inicio.component.html
-│   │   │   ├── inicio.component.css
-│   │   ├── gestion-adquisiciones/
-│   │   │   ├── gestion-adquisiciones.component.ts
-│   │   │   ├── gestion-adquisiciones.component.html
-│   │   │   ├── gestion-adquisiciones.component.css
-│   ├── services/
-│   │   ├── adquisiciones.service.ts
-├── assets/
-│   ├── images/
-│   │   ├── logo-adres.jpg
-│   ├── requerimientos.json
-├── [index.html](http://_vscodecontentref_/0)
+   ```bash
+    src/
+    ├── app/
+    │   ├── pages/
+    │   │   ├── inicio/
+    │   │   │   ├── inicio.component.ts
+    │   │   │   ├── inicio.component.html
+    │   │   │   ├── inicio.component.css
+    │   │   ├── gestion-adquisiciones/
+    │   │   │   ├── gestion-adquisiciones.component.ts
+    │   │   │   ├── gestion-adquisiciones.component.html
+    │   │   │   ├── gestion-adquisiciones.component.css
+    │   ├── services/
+    │   │   ├── adquisiciones.service.ts
+    ├── assets/
+    │   ├── images/
+    │   │   ├── logo-adres.jpg
+    │   ├── requerimientos.json
+    ├── [index.html](http://_vscodecontentref_/0)
+   ```
+
 
 Scripts disponibles
   ng serve: Inicia el servidor de desarrollo.
